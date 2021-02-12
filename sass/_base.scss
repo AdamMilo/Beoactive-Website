@@ -1,0 +1,105 @@
+//CSS CUSTOM PROPERTIES (VARIABLES
+:root {
+  --color-text-primary-light: rgb(207, 197, 197);
+  --color-text-primary: rgb(170, 168, 168);
+  --color-text-secondary: rgb(175, 102, 197);
+  --color-background-very-light: rgb(92, 158, 175);
+  --color-background-light: rgb(87, 154, 163);
+  --color-background-dark: rgb(48, 65, 88);
+
+  --shadow-softest: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+//SASS Variables
+$color-text-primary: rgb(207, 197, 197);
+$color-text-secondary: rgb(175, 102, 197);
+$color-background-very-light: rgb(124, 199, 209);
+$color-background-light: rgb(91, 164, 173);
+$color-background-dark: rgb(48, 65, 88);
+
+//Media query sizes
+$breakpoint-largest: 70.5em; //1125px;
+$breakpoint-large: 61.25em; //980px;
+$breakpoint-medium: 43.75em; //700px;
+$breakpoint-small: 28em; //450px;
+$breakpoint-smallest: 22em; //350px;
+$breakpoint-atomic: 18em; //285px;
+
+////////////////////////////////////
+/////////MEDIA QUERIES
+
+//CSS - RESET
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+html {
+  //I messed up and designed the website at 75% width
+  // using font-size: 62.5%
+  //Then in order not to have to scale every single set unit
+  //down individually I experimented with scaling he
+  //root font, and 20% less ->(42.5%)is the number that
+  //makes everything look great at 100% browser zoom
+  //Just note that if you want to make all the size and
+  //font numbers as they work for 62.5 font size
+  //please bump them up by 20% from their current value
+  //I strongly encourage the aid of a calculator in the endevour
+  font-size: 42.5%;
+
+  @media only screen and(max-width:$breakpoint-largest) {
+    font-size: 40%;
+  }
+  @media only screen and(max-width:$breakpoint-large) {
+    font-size: 37.5%;
+  }
+  @media only screen and(max-width:$breakpoint-medium) {
+    font-size: 35%;
+  }
+  @media only screen and(max-width:$breakpoint-small) {
+    font-size: 20%;
+  }
+  //1rem = 10px
+  box-sizing: border-box;
+}
+body {
+  box-sizing: inherit;
+  font-family: sans-serif;
+  font-size: 2.5rem;
+  line-height: 3.8rem;
+  color: var(--color-text-primary);
+
+  // @media only screen and(max-width:$breakpoint-medium) {
+  //   font-size: 2.5rem;
+  // }
+  // @media only screen and(max-width:$breakpoint-small) {
+  //   font-size: 3.5rem;
+  // }
+  // @media only screen and(max-width:$breakpoint-atomic) {
+  //   font-size: 5rem;
+  // }
+}
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: cooper, sans-serif, serif;
+  color: #fff;
+}
+input {
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+img {
+  width: 100%;
+}

@@ -1,0 +1,80 @@
+.button {
+  padding: 2rem 5rem;
+  background: var(--color-background-very-light);
+  border-radius: 5px;
+  text-shadow: 0 0 3rem lightgray;
+  color: white !important;
+}
+.inline-button {
+  color: var(--color-text-secondary) !important;
+  font-weight: bold;
+  font-size: inherit;
+
+  transition: color 0.2s;
+  &:hover {
+    color: black;
+  }
+}
+
+.active {
+  //colors active text in the secondary text color
+  color: var(--color-text-secondary) !important;
+}
+
+.heading-primary {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--color-background-dark);
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color-background-dark);
+}
+
+//////////////////////////
+/////MIXINS
+@mixin iconStyle {
+  fill: var(--color-text-secondary);
+
+  //common practice to size svg's into squares
+  width: 8rem;
+  height: 8rem;
+
+  //to make the SVG icon not display any whitespace
+  font-size: 0;
+  line-height: 0;
+
+  margin-bottom: -2rem;
+}
+
+@mixin heading-underline {
+  &:after {
+    content: "";
+    display: inline-block;
+    background-color: var(--color-text-secondary);
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 6px;
+    width: 9rem;
+    border-radius: 5px;
+  }
+}
+//////////////////
+////Animations
+
+//Pulsating animation for (infinite animation)
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
